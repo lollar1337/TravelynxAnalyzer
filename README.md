@@ -1,6 +1,7 @@
 # TravelynxAnalyzer
 analyze your Travelynx History (Places/Stations)
 
+
 Place your [travelynx](https://travelynx.de/history) ```history.json``` file in the same directory and run ```AnalyzeTravelynx.py```
 
 
