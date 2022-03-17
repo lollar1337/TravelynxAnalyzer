@@ -4,7 +4,7 @@ analyze your Travelynx History (Places/Stations)
 Place your [travelynx export](https://travelynx.de/export.json) ```history.json``` file in the same directory and run ```AnalyzeTravelynx.py```
 
 ## Dependencies
-* You need ```python```
+* You need ```python``` in the Version 3
 
 ## Showcase
 
