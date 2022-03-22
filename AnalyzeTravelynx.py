@@ -4,35 +4,56 @@ raw_data=open('history.json')
 
 data=json.load(raw_data)
 
-TypeList=list()
-TypesList=list()
-StationList=list()
-StationsList=list()
+TypeListRaw=list()
+TypeListSorted=list()
+StationListRaw=list()
+StationListSorted=list()
+
+CommuteRouteStation1=""
+CommuteRouteStation2=""
+
+HomeStationList=[""]
+
+homecounter=0
+commutecounter=0
 
 print("Zug-Statistiken: ")
 
 for dataset in data:    
+	
+	TypeListRaw.append(dataset['type'])
+	if dataset['to_name'] == CommuteRouteStation1 and dataset['from_name'] == CommuteRouteStation2:
+		commutecounter = commutecounter + 1
+	elif dataset['to_name'] == CommuteRouteStation2 and dataset['from_name'] == CommuteRouteStation1:
+		commutecounter = commutecounter + 1
 
-    TypeList.append(dataset['type'])
+for item in TypeListRaw:
+    if item not in TypeListSorted:
+        TypeListSorted.append(item)
 
-for item in TypeList:
-    if item not in TypesList:
-        TypesList.append(item)
-
-for searchfor in TypesList:
+for searchfor in TypeListSorted:
     
-    print("Du bist",TypeList.count(searchfor),"mal mit ",searchfor, " gefahren")
+    print("Du bist",TypeListRaw.count(searchfor),"mal mit ",searchfor, " gefahren")
 
 print("Stations-Statistiken: ")
 
 for dataset in data:    
 
-    StationList.append(dataset['to_name'])
+    StationListRaw.append(dataset['to_name'])
 
-for item in StationList:
-    if item not in StationsList:
-        StationsList.append(item)
+for item in StationListRaw:
+    if item not in StationListSorted:
+        StationListSorted.append(item)
 
-for searchfor in StationsList:
+for searchfor in StationListSorted:
     
-    print("Du bist",StationList.count(searchfor),"mal nach ",searchfor, " gefahren")
+    print("Du bist",StationListRaw.count(searchfor),"mal nach ",searchfor, " gefahren")
+
+
+for searchfor in StationListRaw:
+	if searchfor in HomeStationList:
+		homecounter=homecounter+1
+
+print("Du bist",homecounter,"mal nach Hause gefahren")
+
+print("Du bist",commutecounter,"mal deine Stammstrecke gefahren")
