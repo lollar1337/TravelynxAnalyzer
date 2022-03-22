@@ -10,6 +10,22 @@ Place your [travelynx](https://travelynx.de/history) ```history.json``` file in 
 ## Dependencies
 * You need ```python``` in the Version 3
 
+## Options
+
+Add your Daily Commute Stations to the Variables Commute Station 1 & 2 Variable
+
+Add your Home Station(s) to the HomeStationList
+
+``ìni
+
+CommuteRouteStation1=""
+CommuteRouteStation2=""
+
+HomeStationList=[""]
+
+````
+
+
 ## Showcase
 
 You will get an Output similar to this:
