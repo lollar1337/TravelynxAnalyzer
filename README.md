@@ -16,14 +16,14 @@ Add your Daily Commute Stations to the Variables Commute Station 1 & 2 Variable
 
 Add your Home Station(s) to the HomeStationList
 
-``ìni
+```ini
 
 CommuteRouteStation1=""
 CommuteRouteStation2=""
 
 HomeStationList=[""]
 
-````
+```
 
 
 ## Showcase
